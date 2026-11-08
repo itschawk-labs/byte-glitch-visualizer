@@ -1,0 +1,8 @@
+*.mp3 binary
+*.m4a binary
+*.png binary
+*.svg text
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf

@@ -1,0 +1,39 @@
+:root{color-scheme:dark;--bg:#080e17;--panel:#0b121d;--border:#253643;--ink:#dce9ee;--muted:#8296a6;--accent:#aeefe5;--purple:#b8afda}
+*{box-sizing:border-box}
+html{min-width:320px;min-height:100%;background:var(--bg)}
+body{min-height:100vh;min-height:100dvh;margin:0;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse 68% 45% at 50% 33%,#112331 0%,#0a141e 47%,#080e17 100%)}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.app{width:min(100% - 36px,630px);margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:32px 0 24px}
+.masthead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:0 0 14px}
+.eyebrow,.fps-indicator,.canvas-topline,.canvas-footline,.track-detail,footer{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;letter-spacing:.12em}
+.eyebrow{font-size:9px;color:#7995a5;margin-bottom:5px}
+h1{margin:0;font-size:clamp(22px,4.5vw,32px);letter-spacing:.09em;font-weight:600;line-height:1.12}
+.slash{color:#a5f4eb;font-weight:300}
+.fps-indicator{flex-shrink:0;font-size:10px;font-weight:600;color:#9bcac7;border:1px solid #28464e;border-radius:99px;padding:7px 11px;margin-bottom:2px;background:#0d202a}
+.fps-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#99e1d2;margin-right:5px;box-shadow:0 0 8px #78bdac}
+.visualizer{position:relative;align-self:center;width:min(100%,560px,calc(70dvh * 8 / 9));aspect-ratio:8/9;overflow:hidden;border:1px solid #273746;border-radius:12px;background:#0a101a;box-shadow:0 20px 65px #0005, inset 0 0 65px #0004}
+#visual{display:block;width:100%;height:100%}
+.canvas-topline,.canvas-footline{pointer-events:none;position:absolute;left:20px;right:20px;display:flex;justify-content:space-between;gap:10px;color:#738c9b;font-size:8px}
+.canvas-topline{top:17px}.canvas-footline{bottom:16px}
+.player{padding:14px 0 0}
+.track-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.track-icon{display:grid;place-items:center;width:39px;height:39px;flex-shrink:0;border:1px solid #344d58;border-radius:8px;background:#142730;color:#a7e7dd}
+.track-info{flex:1;min-width:0}.track-title{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;font-size:13px;font-weight:700;letter-spacing:.065em}
+.track-detail{color:#8097a6;font-size:9px;margin-top:3px;line-height:1.4}
+.track-time{font-variant-numeric:tabular-nums;flex-shrink:0;color:#9caebb;font-size:11px}
+.progress-track{height:3px;background:#233640;border-radius:9px;overflow:hidden;margin:0 0 16px}
+.progress-fill{width:0%;height:100%;background:#a3f0e1;transition:width .14s linear}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.actions button{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:11px 16px;border-radius:8px;border:1px solid #38525c;font-weight:650;font-size:13px;transition:background .16s,border-color .16s,transform .12s}
+.actions button:active{transform:scale(.985)}
+.primary{color:#09232a;background:#b7efe5;border-color:#b7efe5!important}.primary:hover{background:#d2fff4}
+.secondary{color:#c7e7e6;background:#14242e}.secondary:hover{background:#1c3642;border-color:#609292}
+#fileInput{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.feedback{min-height:15px;font-size:10px;color:#718b9a;margin:12px 0 0;text-align:center}
+.feedback.is-error{color:#ffb9ac}
+footer{text-align:center;color:#566f80;font-size:9px;margin-top:19px}
+.footer-divider{color:#75958d;margin:0 8px}
+@media(max-width:600px){.app{width:min(100% - 22px,550px);padding:15px 0 18px}.visualizer{width:min(100%,calc(66dvh * 8 / 9));aspect-ratio:8/9}.canvas-topline,.canvas-footline{left:13px;right:13px;font-size:7px}.track-title{font-size:12px}.track-time{font-size:10px}h1{font-size:23px}.eyebrow{font-size:8px}.fps-indicator{font-size:9px}}
+@media(max-height:720px) and (min-width:620px){.app{width:min(100% - 26px,480px);padding:15px 0}.visualizer{width:min(100%,calc(62dvh * 8 / 9))}.masthead{margin-bottom:9px}.actions button{min-height:42px}footer{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.actions button,.progress-fill{transition:none}}
